@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav.app-nav {
+  background-color: #1A2534;
+  color: #FFF;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      display: inline-block;
+      padding: 10px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+table, td, th {
+  border: 1px solid #E1EBF1;
+}
+
+table.app-table {
+  padding: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  td {
+    input.app-input {
+      border: none;
+      height: 100%;
+      padding: 0;
+    }
+  }
+  td.add-action {
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  span.delete-action {
+    text-align: center;
+    cursor: pointer;
+    color: #EF4444;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  span.update-action {
+    text-align: center;
+    cursor: pointer;
+    color: #2E81E8;;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  span.select-action {
+    text-align: center;
+    cursor: pointer;
+    color: #1A2534;;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  td.none-padding {
+    padding: 0 !important;
+  }
+}
+
+th, td {
+  padding: 10px;
+}
+
+input.app-input {
+  width: 100%;
+  border: 1px solid #E1EBF1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 3px;
+  font-size: 22px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.settings {
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+
+  .column-list-box {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    .column-list {
+      width: 100%;
+      border: 1px solid #E1EBF1;
+      padding: 10px;
+      p {
+        margin: 5px 0 5px 0;
+      }
+      .column-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+        .delete {
+          font-size: 18px;
+          align-items: flex-end;
+          margin-left: 10px;
+          color: #EF4444;
+          cursor: pointer;
+        }
+      }
+    }
+    .column-list.left {
+      margin-right: 10px;
+    }
+    .column-list.right {
+      margin-left: 10px;
+    }
+  }
+  .button-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    button {
+      width: 100%;
+      font-size: 18px;
+      border: 1px solid #E1EBF1;
+      background-color: transparent;
+      padding: 10px;
+      cursor: pointer;
+    }
+    button.one {
+      margin-right: 10px;
+    }
+    button.two {
+      margin-left: 10px;
+    }
+  }
+}
