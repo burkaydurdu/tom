@@ -72,10 +72,11 @@
                       (dispatch [::events/update-row path (:id data)]))
                      (swap! update? not))}
      "Up"]
-    [:span.select-action
-     {:on-click #(dispatch [::events/set-data [:active] {:panel :page-two
-                                                         :id (:id data)}])}
-     "Se"]]])
+    (when (= path :page-one)
+      [:span.select-action
+       {:on-click #(dispatch [::events/set-data [:active] {:panel :page-two
+                                                           :id (:id data)}])}
+       "Se"])]])
 
 
 (defn- list-content-view [data columns]
@@ -101,7 +102,7 @@
                             [input-field [:row-update data-key] (data-key row)]])]))}))
 
 
-(defn- page-one-content []
+(defn- page-content []
   (let [update? (r/atom false)]
     (fn [data columns path]
       [:tr
@@ -118,7 +119,7 @@
      [:tbody
       (for [data @(subscribe [::subs/page-one])]
         ^{:key (str "page-one-" (:id data))}
-        [page-one-content data columns :page-one])
+        [page-content data columns :page-one])
       [page-add columns :page-one]]]))
 
 
@@ -129,7 +130,7 @@
      [:tbody
       (for [data @(subscribe [::subs/active-two-page])]
         ^{:key (str "page-two-" (:id data))}
-        [page-one-content data columns :page-two])
+        [page-content data columns :page-two])
       [page-add columns :page-two]]]))
 
 

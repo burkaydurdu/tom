@@ -111,3 +111,15 @@ Build the app with the `prod` profile:
 ```sh
 lein release
 ```
+
+## Export for Desktop
+
+For Windows
+```sh
+npm run package-win
+```
+
+For Mac
+```sh
+npm run package-mac
+```

@@ -80,7 +80,7 @@
                       [:page-one]
                       [:page-two (-> db :active :id keyword)])]
       {:db (-> db
-               (assoc path (filter #(not= (:id %) id) (path db)))
+               (assoc path (filterv #(not= (:id %) id) (path db)))
                (assoc-in data-path (map #(dissoc % (keyword id)) (get-in db data-path))))
        :dispatch [::save-settings-to-local]})))
 
